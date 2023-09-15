@@ -1,0 +1,73 @@
+<!-- Header -->
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a routerLink="/library/main"><h1 class="heading">Library Management System</h1></a>
+        </div>
+        <ul class="nav-links">
+            <li><a routerLink="/library/main"><i class="fa-solid fa-arrow-left"></i>  Go Back</a></li>
+            <li><a routerLink="/library/addMember">Add Member <i class="fa-solid fa-plus"></i></a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Main Content -->
+<div class="buttons">
+    <div class="button-group">
+        <button class="btn btn-filter" (click)="filterByStatus('Assigned')">
+            <span class="btn-label">Book Assigned</span>
+        </button>
+        <button class="btn btn-filter" (click)="filterByStatus('Not Assigned')">
+            <span class="btn-label">Not Assigned</span>
+        </button>
+        <button class="btn btn-reset" (click)="filterByStatus('All')">
+            <span class="btn-label">All Members</span>
+        </button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <h2 class="text-center mb-4 mt-4">All Members</h2>
+    </div>
+    <div class="row mb-3">
+        <div class="col-lg-6 offset-lg-3">
+            <div>
+                <input type="text" class="form-control" placeholder="Enter name to search" (keyup)="search($event)">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let member of (currentFilter === 'Assigned' ? assignedMembers : currentFilter === 'Not Assigned' ? notAssignedMembers : allMembers)">
+            <div class="member">
+                <div class="image">
+                    <img [src]="member.photo" alt="Member Image">
+                </div>
+                <div class="details">
+                    <h3 class="member-name">Name: {{member.name}}</h3>
+                    <p><strong>Email:</strong> {{member.email}}</p>
+                    <p><strong>Book:</strong> {{member.book}}</p>
+                    <button class="btn" routerLink="/library/viewMember/{{member.id}}">View Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="social-icons">
+        <a href="#" class="icon">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="#" class="icon">
+            <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a href="#" class="icon">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+    </div>
+    <p>&copy; 2023 Library Management System</p>
+</footer>

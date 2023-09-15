@@ -1,0 +1,88 @@
+<!-- Header -->
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Library Management System</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a routerLink="/library/home"><i class="fa-solid fa-arrow-left"></i>  Go Back</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="heading text-center mt-4 mb-4">
+        <h2>Add Book</h2>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <form>
+                <div class="form-group">
+                    <input [(ngModel)]="book.name" name="name" type="text" class="form-control" id="bookName" placeholder="Enter book name">
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="book.author" name="author" type="text" class="form-control" id="author" placeholder="Enter author">
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="book.photo" name="image" type="text" class="form-control" id="image" placeholder="Enter image address">
+                </div>
+                <div class="form-group">
+                    <textarea [(ngModel)]="book.info" name="info" class="form-control" id="description" placeholder="Enter description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select [(ngModel)]="book.status" name="status" class="form-control" id="status">
+                        <option selected disabled>Status</option>
+                        <option>Available</option>
+                        <option>Not Available</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="genre">Genre</label>
+                    <select [(ngModel)]="book.genre" name="genre" class="form-control" id="genre">   
+                       <option selected hidden disabled>Genre</option>
+                       <option>Fiction</option>
+                       <option>Classic</option>
+                       <option>Drama</option>
+                       <option>Fantasy</option>
+                       <option>Dystopian</option>
+                       <option>Thriller</option>
+                       <option>Adventure</option>
+                       <option>Horror</option>
+                       <option>Post-Apocalyptic</option>
+                       <option>Young Adult</option>
+                       <option>Philosophical</option>
+                       <option>Gothic</option>
+                       <option>Self-Help</option>
+                       <option>Science Fiction</option>
+                       <option>Novella</option>
+                       <option>Tragedy</option>
+                    </select>
+                  </div>
+                  <button (click)="addBook()" type="submit" class="btn btn-primary mb-5">Add Book <i class="fa-solid fa-plus"></i></button>
+            </form>
+        </div>
+        <div class="col-6">
+            <div class="image-container">
+                <img [src]="book.photo" alt="Book Cover" class="book-image">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="social-icons">
+        <a href="#" class="icon">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="#" class="icon">
+            <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a href="#" class="icon">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+    </div>
+    <p>&copy; 2023 Library Management System</p>
+</footer>

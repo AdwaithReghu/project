@@ -1,0 +1,69 @@
+<!-- Header -->
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a routerLink="/library/main"><h1 class="heading">Library Management System</h1></a>
+        </div>
+        <ul class="nav-links">
+            <li><a routerLink="/library/main"><i class="fa-solid fa-arrow-left"></i>  Go Back</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <h2 class="text-center mb-4 mt-4">Reports</h2>
+    </div>
+    <div class="table">
+        <table class="report-table">
+            <thead>
+                <tr>
+                    <th>Book ID</th>
+                    <th>Book Name</th>
+                    <th>Member ID</th>
+                    <th>Member Name</th>
+                    <th>Assigned Date</th>
+                    <th>Returned Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let hist of history">
+                    <ng-container *ngIf="hist.action === 'Book Assigned'">
+                        <tr>
+                            <td [ngClass]="{'highlighted-row': hist.bookId == selectedId}">{{hist.bookId}}</td>
+                            <td>{{getBookName(hist.bookId)}}</td>
+                            <td>{{hist.memberId}}</td>
+                            <td>{{getMemberName(hist.memberId)}}</td>
+                            <td>{{ hist.date }}</td>
+                            <td>
+                                <ng-container *ngFor="let returnHist of history; let j=index">
+                                    <ng-container *ngIf="returnHist.action === 'Book Returned' && returnHist.bookId === hist.bookId && returnHist.memberId === hist.memberId">
+                                        {{ returnHist.date }}
+                                    </ng-container>
+                                </ng-container>
+                                <span class="not-returned" *ngIf="!hasReturnDate(hist)">Not Returned</span>
+                            </td>
+                        </tr>
+                    </ng-container>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="social-icons">
+        <a href="#" class="icon">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="#" class="icon">
+            <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a href="#" class="icon">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+    </div>
+    <p>&copy; 2023 Library Management System</p>
+</footer>

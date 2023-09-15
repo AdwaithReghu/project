@@ -1,0 +1,110 @@
+<!-- Header -->
+<header>
+    <nav class="navbar">
+        <div class="logo">
+          <a routerLink="/library/main"><h1 class="heading">Library Management System</h1></a>
+        </div>
+        <ul class="nav-links">
+            <li><a routerLink="/library/home"><i class="fa-solid fa-arrow-left"></i>  Go Back</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="book">
+        <img [src]="book.photo" alt="Book Cover" class="book-cover">
+    </div>
+    <div class="book-details">
+        <h2 class="book-title">{{book.name}}
+            <span class="icon-button" style="margin-top: 100px; margin-right: 410px;"><i class="fa-solid fa-pen-to-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></span>
+            <span class="icon-button" style=" margin-top: 100px; margin-right: 370px;"><a (click)="deleteBook(book.id)"><i class="fa-solid fa-trash"></i></a></span>
+        </h2>
+        <p class="author"><strong>Author:</strong> {{book.author}}</p>
+        <p class="status">
+            <strong>Status:</strong> 
+            <span [ngClass]="{'green-background': status === 'Available', 'red-background': status !== 'Available'}">
+                {{book.status}}
+            </span>
+            <a (click)="navigateToReportsPage()"><i class="fa-solid fa-eye"></i></a>
+        </p>
+        <p class="info"><strong>Info:</strong> {{book.info}}</p>
+        <p class="genre"><strong>Genre:</strong> {{book.genre}}</p>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Book Details</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="bookName">Book Name</label>
+                <input [(ngModel)]="book.name" name="name" type="text" class="form-control" id="bookName" placeholder="Enter the book's name" required>
+              </div>
+              <div class="form-group">
+                <label for="author">Author</label>
+                <input [(ngModel)]="book.author" name="author" type="text" class="form-control" id="author" placeholder="Enter the author's name" required>
+              </div>
+              <div class="form-group">
+                <label for="image">Image</label>
+                <input [(ngModel)]="book.photo" name="image" type="url" class="form-control" id="image" placeholder="Enter the image URL" required>
+              </div>
+              <div class="form-group">
+                <label for="description">Description</label>
+                <textarea [(ngModel)]="book.info" name="info" class="form-control" id="description" placeholder="Enter a brief description" required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="genre">Genre</label>
+                <select [(ngModel)]="book.genre" name="genre" class="form-control" id="genre" required>
+                  <option disabled selected value="">Select Genre</option>
+                  <option>Fiction</option>
+                  <option>Classic</option>
+                  <option>Drama</option>
+                  <option>Fantasy</option>
+                  <option>Dystopian</option>
+                  <option>Thriller</option>
+                  <option>Adventure</option>
+                  <option>Horror</option>
+                  <option>Post-Apocalyptic</option>
+                  <option>Young Adult</option>
+                  <option>Philosophical</option>
+                  <option>Gothic</option>
+                  <option>Self-Help</option>
+                  <option>Science Fiction</option>
+                  <option>Novella</option>
+                  <option>Tragedy</option>
+                </select>
+              </div>    
+            </form>
+          </div>
+          
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="updateBook()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="social-icons">
+        <a href="#" class="icon">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="#" class="icon">
+            <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a href="#" class="icon">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+    </div>
+    <p>&copy; 2023 Library Management System</p>
+</footer>

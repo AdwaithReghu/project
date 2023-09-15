@@ -1,0 +1,64 @@
+<!-- Header -->
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a routerLink="/library/main"><h1 class="heading">Library Management System</h1></a>
+        </div>
+        <ul class="nav-links">
+            <li><a routerLink="/library/main"><i class="fa-solid fa-arrow-left"></i>  Go Back</a></li>
+            <li><a routerLink="/library/addBook">Add Book <i class="fa-solid fa-plus"></i></a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Main Content -->
+<div class="buttons">
+    <div class="button-group">
+        <button class="btn btn-filter" (click)="filterByStatus('Available')">
+            <span class="btn-label">Available Books</span>
+        </button>
+        <button class="btn btn-filter" (click)="filterByStatus('Not Available')">
+            <span class="btn-label">Not Available</span>
+        </button>
+        <button class="btn btn-reset" (click)="filterByStatus('All')">
+            <span class="btn-label">Show All</span>
+        </button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <h2>All Books</h2>
+    </div>
+    <div class="col-lg-6 offset-lg-3">
+        <div>
+            <input type="text" class="form-control" placeholder="Enter name to search" (keyup)="search($event)">
+        </div>
+    </div>
+    <div class="book-container">
+        <div class="book" *ngFor="let book of (currentFilter === 'Available' ? availableBooks : currentFilter === 'Not Available' ? notAvailableBooks : allBooks)">
+            <a routerLink="/library/viewBook/{{book.id}}">
+                <img [src]="book.photo" alt="The Winners">
+            </a>
+            <div class="bulb">
+                <div [ngClass]="{'red': book.status !== 'Available', 'green': book.status === 'Available'}"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="social-icons">
+        <a href="#" class="icon">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="#" class="icon">
+            <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a href="#" class="icon">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+    </div>
+    <p>&copy; 2023 Library Management System</p>
+</footer>

@@ -1,0 +1,147 @@
+<!-- Header -->
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a routerLink="/library/main"><h1 class="heading">Library Management System</h1></a>
+        </div>
+        <ul class="nav-links">
+            <li><a routerLink="/library/home">Books</a></li>
+            <li><a routerLink="/library/members">Members</a></li>
+            <li><a routerLink="/library/reports">Reports</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div class="lentout">
+                <a type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <img src="https://www.rd.com/wp-content/uploads/2022/06/GettyImages-1129874863.jpg?fit=700%2C467"
+                        alt="">
+                </a>
+                <h2>Assign Book</h2>
+            </div>
+        </div>
+        <!-- Modal 1 -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Assign Book</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form #bookForm="ngForm">
+                            <div class="mb-2">
+                                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Enter Book Name"
+                                    [(ngModel)]="selectedBookName" name="selectedBookName" (ngModelChange)="setSelectedBookId(selectedBookName)" required>
+                                <datalist id="datalistOptions">
+                                    <option *ngFor="let book of books" [value]="book.name">{{ book.name }}</option>
+                                </datalist>
+                            </div>
+
+                              <div class="mb-2">
+                                <input type="text" class="form-control" placeholder="Book Id" [ngModel]="selectedBookId" name="selectedBookId" readonly>
+                              </div>
+
+                              <div class="mb-2">
+                                <input class="form-control" list="datalistOptions1" id="exampleDataList1" placeholder="Enter Member Name"
+                                [(ngModel)]="selectedMemberName" name="selectedMemberName" (ngModelChange)="setSelectedMemberId(selectedMemberName)" required> 
+                                <datalist id="datalistOptions1">
+                                  <option *ngFor="let member of members" [value]="member.name">{{ member.name }}</option>
+                                </datalist>
+                              </div>
+
+                              <div>
+                                <input type="text" class="form-control mb-2" placeholder="Member Id" [ngModel]="selectedMemberId" name="selectedMemberId" readonly>
+                              </div>
+
+                              <div class="mb-2">
+                                <input type="date" id="assignmentDate" class="form-control" [(ngModel)]="date" name="date" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" (click)="assignBook(bookForm)">Assign</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="return">
+                <a type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+                    <img src="https://cdn.firespring.com/images/1f569800-2e11-4d11-9db5-cbcac4ce56ea.jpg" alt="">
+                </a>
+                <h2>Return Book</h2>
+            </div>
+        </div>
+        <!-- Modal 2 -->
+        <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel1">Return Book</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form #returnForm="ngForm">
+                            <div class="mb-2">
+                                <input class="form-control" list="returndatalistOptions" id="returnexampleDataList" placeholder="Enter Book Name"
+                                    [(ngModel)]=" returnedBookName" name=" returnedBookName" (ngModelChange)="returnBookId(returnedBookName)" required>
+                                <datalist id="returndatalistOptions">
+                                    <option *ngFor="let book of returnBooks" [value]="book.name">{{ book.name }}</option>
+                                </datalist>
+                            </div>
+
+                              <div class="mb-2">
+                                <input type="text" class="form-control" placeholder="Book Id" [ngModel]="returnedBookId" name="returnedBookId" readonly>
+                              </div>
+
+                              <div class="mb-2">
+                                <input class="form-control" list="returndatalistOptions1" id="returnexampleDataList1" placeholder="Enter Member Name"
+                                [(ngModel)]="returnedMemberName" name="returnedMemberName" (ngModelChange)="returnMemberId(returnedMemberName)" required> 
+                                <datalist id="returndatalistOptions1">
+                                  <option *ngFor="let member of returnMember" [value]="member.name">{{ member.name }}</option>
+                                </datalist>
+                              </div>
+
+                              <div>
+                                <input type="text" class="form-control mb-2" placeholder="Member Id" [ngModel]="returnedMemberId" name="returnedMemberId" readonly>
+                              </div>
+
+                              <div class="mb-2">
+                                <input type="date" id="assignmentDate" class="form-control" [(ngModel)]="date" name="date" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" (click)="bookReturn(returnForm)">Return</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="social-icons">
+        <a href="#" class="icon">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="#" class="icon">
+            <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a href="#" class="icon">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+    </div>
+    <p>&copy; 2023 Library Management System</p>
+</footer>

@@ -1,0 +1,419 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "name": "The Winners",
+      "author": "Neil Smith",
+      "photo": "https://images-eu.ssl-images-amazon.com/images/I/51Xjn7SzgRL._AC_SX368_.jpg",
+      "status": "Available",
+      "info": "The Winners returns to the close-knit, resilient community of Beartown for a story about first loves, second chances, and last goodbyes.",
+      "genre": "Fiction"
+    },
+    {
+      "id": "2",
+      "name": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "photo": "https://m.media-amazon.com/images/I/71FTb9X6wsL._AC_UF1000,1000_QL80_.jpg",
+      "status": "Available",
+      "info": "The Great Gatsby is a classic novel about the American Dream and the Roaring Twenties.",
+      "genre": "Classic"
+    },
+    {
+      "id": "3",
+      "name": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "photo": "https://cdn.britannica.com/21/182021-050-666DB6B1/book-cover-To-Kill-a-Mockingbird-many-1961.jpg",
+      "status": "Available",
+      "info": "To Kill a Mockingbird is a timeless novel addressing issues of racism and injustice in the American South.",
+      "genre": "Drama"
+    },
+    {
+      "id": "4",
+      "name": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "photo": "https://m.media-amazon.com/images/I/71a+5TjuYDL._AC_UF1000,1000_QL80_.jpg",
+      "status": "Available",
+      "info": "The Hobbit follows the journey of Bilbo Baggins as he joins a group of dwarves on a quest to reclaim their homeland.",
+      "genre": "Fantasy"
+    },
+    {
+      "id": "6",
+      "name": "Harry Potter and the Philosopher's Stone",
+      "author": "J.K. Rowling",
+      "photo": "https://upload.wikimedia.org/wikipedia/en/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg",
+      "status": "Available",
+      "info": "The first book in the Harry Potter series introduces readers to the magical world of wizards and witches.",
+      "genre": "Fantasy"
+    },
+    {
+      "id": "7",
+      "name": "1984",
+      "author": "George Orwell",
+      "photo": "https://cdn.kobo.com/book-images/c9472126-7f96-402d-ba57-5ba4c0f4b238/1200/1200/False/nineteen-eighty-four-1984-george.jpg",
+      "status": "Available",
+      "info": "1984 is a dystopian novel that explores the consequences of totalitarianism and surveillance.",
+      "genre": "Dystopian"
+    },
+    {
+      "id": "8",
+      "name": "The Hunger Games",
+      "author": "Suzanne Collins",
+      "photo": "https://m.media-amazon.com/images/I/61i8nC90deL._AC_UF1000,1000_QL80_.jpg",
+      "status": "Available",
+      "info": "The Hunger Games is the first book in a series about a dystopian society where children are forced to fight to the death in a televised competition.",
+      "genre": "Dystopian"
+    },
+    {
+      "id": "9",
+      "name": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "photo": "https://m.media-amazon.com/images/I/41SvK+T3eYL._SL500_.jpg",
+      "status": "Available",
+      "info": "The Lord of the Rings is an epic fantasy trilogy that follows the quest to destroy the One Ring.",
+      "genre": "Fantasy"
+    },
+    {
+      "id": "10",
+      "name": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "photo": "https://rukminim2.flixcart.com/image/850/1000/kqidx8w0/book/m/t/q/pride-prejudice-original-imag4hhytfbvzyza.jpeg?q=90",
+      "status": "Available",
+      "info": "Pride and Prejudice is a classic novel about love and social class in 19th-century England.",
+      "genre": "Classic"
+    },
+    {
+      "id": "11",
+      "name": "The Da Vinci Code",
+      "author": "Dan Brown",
+      "photo": "https://cdn.kobo.com/book-images/54253aaa-b7b5-44ec-8893-2a313c7928ed/1200/1200/False/the-da-vinci-code-abridged-edition.jpg",
+      "status": "Available",
+      "info": "The Da Vinci Code is a thriller that follows a symbologist's quest to uncover hidden secrets.",
+      "genre": "Thriller"
+    },
+    {
+      "id": "12",
+      "name": "Brave New World",
+      "author": "Aldous Huxley",
+      "photo": "https://cdn.kobo.com/book-images/6f07a0e9-8ca8-4b28-982c-7898ac591744/1200/1200/False/brave-new-world-79.jpg",
+      "status": "Available",
+      "info": "Brave New World is a dystopian novel that explores a future society controlled by technology and pleasure.",
+      "genre": "Dystopian"
+    },
+    {
+      "id": "13",
+      "name": "Moby-Dick",
+      "author": "Herman Melville",
+      "photo": "https://cdn.kobo.com/book-images/34c5bfd3-a8d0-4500-a321-a1533c3af3f7/353/569/90/False/moby-dick-118.jpg",
+      "status": "Available",
+      "info": "Moby-Dick is an epic adventure novel about Captain Ahab's obsession with a white whale.",
+      "genre": "Adventure"
+    },
+    {
+      "id": "14",
+      "name": "The Shining",
+      "author": "Stephen King",
+      "photo": "https://assets.blogs.bsu.edu/wp-content/uploads/sites/25/2020/03/09153737/shining-683x1024.jpg",
+      "status": "Available",
+      "info": "The Shining is a horror novel that follows the descent into madness of a family isolated in a haunted hotel.",
+      "genre": "Horror"
+    },
+    {
+      "id": "15",
+      "name": "The Girl with the Dragon Tattoo",
+      "author": "Stieg Larsson",
+      "photo": "https://rukminim1.flixcart.com/image/850/1000/kklhbbk0/book/w/w/p/the-girl-with-the-dragon-tattoo-original-imafzwrpg6snapkx.jpeg?q=90",
+      "status": "Available",
+      "info": "The Girl with the Dragon Tattoo is a thriller that uncovers dark family secrets and mysteries.",
+      "genre": "Thriller"
+    },
+    {
+      "id": "16",
+      "name": "The Road",
+      "author": "Cormac McCarthy",
+      "photo": "https://m.media-amazon.com/images/I/81P45LkcMuL._AC_UF1000,1000_QL80_.jpg",
+      "status": "Available",
+      "info": "The Road is a post-apocalyptic novel about a father and son's journey for survival.",
+      "genre": "Post-Apocalyptic"
+    },
+    {
+      "id": "17",
+      "name": "The Fault in Our Stars",
+      "author": "John Green",
+      "photo": "https://5.imimg.com/data5/RD/XA/MY-11183377/the-fault-in-our-stars.png",
+      "status": "Available",
+      "info": "The Fault in Our Stars is a young adult novel about two cancer-stricken teenagers who fall in love.",
+      "genre": "Young Adult"
+    },
+    {
+      "id": "18",
+      "name": "The Alchemist",
+      "author": "Paulo Coelho",
+      "photo": "https://miro.medium.com/v2/resize:fit:510/1*7UzsrkGlocuNkF1qo3JU5A.png",
+      "status": "Available",
+      "info": "The Alchemist is a philosophical novel about a shepherd's journey to find his personal legend.",
+      "genre": "Philosophical"
+    },
+    {
+      "id": "19",
+      "name": "Frankenstein",
+      "author": "Mary Shelley",
+      "photo": "https://cdn.kobo.com/book-images/7edc63b3-95a4-42ad-ab61-96135edda145/1200/1200/False/frankenstein-83.jpg",
+      "status": "Available",
+      "info": "Frankenstein is a Gothic novel that explores the consequences of playing God.",
+      "genre": "Gothic"
+    },
+    {
+      "id": "20",
+      "name": "The Road Less Traveled",
+      "author": "M. Scott Peck",
+      "photo": "https://m.media-amazon.com/images/I/61O9-c57E5L._AC_UF1000,1000_QL80_.jpg",
+      "status": "Available",
+      "info": "The Road Less Traveled is a self-help book that offers a path to personal growth and fulfillment.",
+      "genre": "Self-Help"
+    },
+    {
+      "id": "21",
+      "name": "The Martian",
+      "author": "Andy Weir",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/7/71/The_Martian_%28Weir_novel%29.jpg",
+      "status": "Available",
+      "info": "The Martian is a science fiction novel about an astronaut stranded on Mars.",
+      "genre": "Science Fiction"
+    },
+    {
+      "id": "22",
+      "name": "Jurassic Park",
+      "author": "Michael Crichton",
+      "photo": "https://upload.wikimedia.org/wikipedia/en/2/21/Jurassic_Park_%28book_cover%29.jpg",
+      "status": "Available",
+      "info": "Jurassic Park is a thriller about the resurrection of dinosaurs in a theme park.",
+      "genre": "Thriller"
+    },
+    {
+      "id": "23",
+      "name": "The Old Man and the Sea",
+      "author": "Ernest Hemingway",
+      "photo": "https://m.media-amazon.com/images/I/71Au8SjrwkL._AC_UF1000,1000_QL80_.jpg",
+      "status": "Available",
+      "info": "The Old Man and the Sea is a novella about an aging fisherman's epic struggle to catch a giant marlin.",
+      "genre": "Novella"
+    },
+    {
+      "name": "Hamlet",
+      "author": "William Shakespeare",
+      "photo": "https://cdn.kobo.com/book-images/389c6a10-f026-4bbe-a132-34072053689a/1200/1200/False/hamlet-271.jpg",
+      "info": "Hamlet, Prince of Denmark, is a tragedy written by William Shakespeare at an uncertain date between 1599 and 1602. It is Shakespeare's longest play, and is among the most powerful and influential tragedies in the English language.",
+      "status": "Available",
+      "genre": "Tragedy",
+      "id": "WgsGltU"
+    },
+    {
+      "name": "Sherlock Holmes",
+      "author": "Sir Arthur Conan Doyle",
+      "photo": "https://cdn.kobo.com/book-images/15bee909-5e30-4dc2-987c-70a45d88baa2/1200/1200/False/the-great-adventures-of-sherlock-holmes-1.jpg",
+      "info": "These stories have been adapted into numerous films, television shows, and other works of art. They have also been the subject of much scholarly analysis and debate.",
+      "status": "Not Available",
+      "genre": "Thriller",
+      "id": "3ZZ52YN"
+    }
+  ],
+  "members": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "johndoe@gmail.com",
+      "membersince": "jan 2022",
+      "contactno": "1234567980",
+      "photo": "https://www.pngitem.com/pimgs/m/402-4023350_transparent-member-icon-png-member-logo-png-download.png",
+      "book": "Not Assigned"
+    },
+    {
+      "id": "2",
+      "name": "Alice Smith",
+      "email": "alice.smith@example.com",
+      "membersince": "Feb 2021",
+      "contactno": "9876543210",
+      "photo": "https://www.pngitem.com/pimgs/m/402-4023350_transparent-member-icon-png-member-logo-png-download.png",
+      "book": "Not Assigned"
+    },
+    {
+      "id": "3",
+      "name": "David Johnson",
+      "email": "david.j@example.net",
+      "membersince": "Mar 2023",
+      "contactno": "5551234567",
+      "photo": "https://www.pngitem.com/pimgs/m/402-4023350_transparent-member-icon-png-member-logo-png-download.png",
+      "book": "Not Assigned"
+    },
+    {
+      "id": "5",
+      "name": "Michael Wilson",
+      "email": "michael.w@example.com",
+      "membersince": "Apr 2019",
+      "contactno": "1112223333",
+      "photo": "https://www.pngitem.com/pimgs/m/402-4023350_transparent-member-icon-png-member-logo-png-download.png",
+      "book": "Not Assigned"
+    },
+    {
+      "id": "6",
+      "name": "Olivia Lee",
+      "email": "olivia.l@example.net",
+      "membersince": "Jun 2022",
+      "contactno": "4445556666",
+      "photo": "https://www.pngitem.com/pimgs/m/402-4023350_transparent-member-icon-png-member-logo-png-download.png",
+      "book": "Not Assigned"
+    },
+    {
+      "id": "7",
+      "name": "William Davis",
+      "email": "william.d@example.org",
+      "membersince": "Dec 2021",
+      "contactno": "9998887777",
+      "photo": "https://www.pngitem.com/pimgs/m/402-4023350_transparent-member-icon-png-member-logo-png-download.png",
+      "book": "Not Assigned"
+    },
+    {
+      "id": "8",
+      "name": "Sophia Wilson",
+      "email": "sophia.w@example.com",
+      "membersince": "Jan 2020",
+      "contactno": "6665554444",
+      "photo": "https://www.pngitem.com/pimgs/m/402-4023350_transparent-member-icon-png-member-logo-png-download.png",
+      "book": "Not Assigned"
+    },
+    {
+      "id": "9",
+      "name": "James Johnson",
+      "email": "james.j@example.net",
+      "membersince": "Feb 2018",
+      "contactno": "1231231234",
+      "photo": "https://www.pngitem.com/pimgs/m/402-4023350_transparent-member-icon-png-member-logo-png-download.png",
+      "book": "Not Assigned"
+    },
+    {
+      "id": "10",
+      "name": "Emma Davis",
+      "email": "emma.d@example.org",
+      "membersince": "Jul 2021",
+      "contactno": "7777777777",
+      "photo": "https://www.pngitem.com/pimgs/m/402-4023350_transparent-member-icon-png-member-logo-png-download.png",
+      "book": "Assigned"
+    },
+    {
+      "name": "Carl Mathew",
+      "email": "carl@gmail.com",
+      "contactno": "9638527410",
+      "membersince": "2023-09-14",
+      "photo": "data:image/png;base64,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",
+      "book": "Not Assigned",
+      "id": "Qtia-u_"
+    }
+  ],
+  "history": [
+    {
+      "id": 1,
+      "bookId": "1",
+      "memberId": "2",
+      "action": "Book Assigned",
+      "date": "2023-09-15"
+    },
+    {
+      "id": 2,
+      "bookId": "1",
+      "memberId": "2",
+      "action": "Book Returned",
+      "date": "2023-09-15"
+    },
+    {
+      "id": 3,
+      "bookId": "1",
+      "memberId": "6",
+      "action": "Book Assigned",
+      "date": "2023-09-15"
+    },
+    {
+      "id": 4,
+      "bookId": "1",
+      "memberId": "6",
+      "action": "Book Returned",
+      "date": "2023-09-16"
+    },
+    {
+      "id": 5,
+      "bookId": "6",
+      "memberId": "8",
+      "action": "Book Assigned",
+      "date": "2023-09-14"
+    },
+    {
+      "id": 6,
+      "bookId": "6",
+      "memberId": "8",
+      "action": "Book Returned",
+      "date": "2023-09-16"
+    },
+    {
+      "id": 7,
+      "bookId": "3",
+      "memberId": "Qtia-u_",
+      "action": "Book Assigned",
+      "date": "2023-09-14"
+    },
+    {
+      "id": 8,
+      "bookId": "3",
+      "memberId": "Qtia-u_",
+      "action": "Book Returned",
+      "date": "2023-09-18"
+    },
+    {
+      "id": 9,
+      "bookId": "9",
+      "memberId": "7",
+      "action": "Book Assigned",
+      "date": "2023-09-14"
+    },
+    {
+      "id": 10,
+      "bookId": "9",
+      "memberId": "7",
+      "action": "Book Returned",
+      "date": "2023-09-16"
+    },
+    {
+      "id": 11,
+      "bookId": "7",
+      "memberId": "6",
+      "action": "Book Assigned",
+      "date": "2023-09-14"
+    },
+    {
+      "id": 12,
+      "bookId": "7",
+      "memberId": "6",
+      "action": "Book Returned",
+      "date": "2023-09-16"
+    },
+    {
+      "id": 13,
+      "bookId": "3",
+      "memberId": "5",
+      "action": "Book Assigned",
+      "date": "2023-09-14"
+    },
+    {
+      "id": 14,
+      "bookId": "3",
+      "memberId": "5",
+      "action": "Book Returned",
+      "date": "2023-09-17"
+    },
+    {
+      "id": 15,
+      "bookId": "3ZZ52YN",
+      "memberId": "10",
+      "action": "Book Assigned",
+      "date": "2023-09-14"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* NavBar */
+header {
+    background-color: #332266; 
+    padding: 15px 0;
+    color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* logo */
+.logo {
+    text-align: center;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+.heading {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+
+/* navigation links */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li:last-child {
+    margin-right: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff5733; 
+}
+
+/* Animation */
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px; 
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff5733;
+    transition: width 0.3s ease; 
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Main Content */
+/* Table Styles */
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.report-table th,
+.report-table td {
+    padding: 10px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.report-table th {
+    background-color: #332266;
+    color: #fff;
+    font-weight: bold;
+}
+
+.report-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.report-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+/* "not-returned" class */
+.not-returned {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .highlighted-row {
+    background-color: yellow; /* Change this to the desired highlight color */
+  }
+
+/* Footer */
+.footer {
+    background-color: #332266;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Social Media Icons */
+.social-icons {
+    margin-bottom: 20px;
+}
+
+.icon {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.icon img {
+    max-width: 24px;
+    height: auto;
+}
+
+.icon:hover {
+    color: #ff5733;
+}

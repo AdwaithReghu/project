@@ -1,0 +1,143 @@
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* NavBar */
+header {
+    background-color: #332266; 
+    padding: 15px 0;
+    color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* logo */
+.logo {
+    text-align: center;
+}
+
+.logo h1 {
+    font-size: 24px;
+}
+
+/* navigation links */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li:last-child {
+    margin-right: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff5733; 
+}
+
+/* Animation */
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px; 
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff5733;
+    transition: width 0.3s ease; 
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Main Content */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #332266;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ff5733; 
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; 
+    width: 400px;
+    margin-top: -100px;
+}
+
+.book-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Footer */
+.footer {
+    background-color: #332266;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Social Media Icons */
+.social-icons {
+    margin-bottom: 20px;
+}
+
+.icon {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.icon img {
+    max-width: 24px;
+    height: auto;
+}
+
+.icon:hover {
+    color: #ff5733;
+}
