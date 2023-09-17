@@ -35,23 +35,21 @@
                     <div class="modal-body">
                         <form #bookForm="ngForm">
                             <div class="mb-2">
-                                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Enter Book Name"
-                                    [(ngModel)]="selectedBookName" name="selectedBookName" (ngModelChange)="setSelectedBookId(selectedBookName)" required>
-                                <datalist id="datalistOptions">
-                                    <option *ngFor="let book of books" [value]="book.name">{{ book.name }}</option>
-                                </datalist>
-                            </div>
+                                <select class="form-control" id="exampleDataList" [(ngModel)]="selectedBookName" name="selectedBookName" (ngModelChange)="setSelectedBookId(selectedBookName)" required>
+                                  <option value="" disabled selected>Select a Book</option>
+                                  <option *ngFor="let book of books" [value]="book.name">{{ book.name }}</option>
+                                </select>
+                              </div>
 
                               <div class="mb-2">
                                 <input type="text" class="form-control" placeholder="Book Id" [ngModel]="selectedBookId" name="selectedBookId" readonly>
                               </div>
 
                               <div class="mb-2">
-                                <input class="form-control" list="datalistOptions1" id="exampleDataList1" placeholder="Enter Member Name"
-                                [(ngModel)]="selectedMemberName" name="selectedMemberName" (ngModelChange)="setSelectedMemberId(selectedMemberName)" required> 
-                                <datalist id="datalistOptions1">
+                                <select class="form-control" id="exampleDataList1" [(ngModel)]="selectedMemberName" name="selectedMemberName" (ngModelChange)="setSelectedMemberId(selectedMemberName)" required>
+                                  <option value="" disabled selected>Select a Member</option>
                                   <option *ngFor="let member of members" [value]="member.name">{{ member.name }}</option>
-                                </datalist>
+                                </select>
                               </div>
 
                               <div>
@@ -60,6 +58,10 @@
 
                               <div class="mb-2">
                                 <input type="date" id="assignmentDate" class="form-control" [(ngModel)]="date" name="date" required>
+                            </div>
+
+                            <div class="mb-2">
+                                <input type="text" id="dueAmount" placeholder="Enter Due Amount" class="form-control" [(ngModel)]="dueAmount" name="dueAmount" required>
                             </div>
                         </form>
                     </div>
@@ -91,31 +93,33 @@
                     <div class="modal-body">
                         <form #returnForm="ngForm">
                             <div class="mb-2">
-                                <input class="form-control" list="returndatalistOptions" id="returnexampleDataList" placeholder="Enter Book Name"
-                                    [(ngModel)]=" returnedBookName" name=" returnedBookName" (ngModelChange)="returnBookId(returnedBookName)" required>
-                                <datalist id="returndatalistOptions">
-                                    <option *ngFor="let book of returnBooks" [value]="book.name">{{ book.name }}</option>
-                                </datalist>
-                            </div>
-
-                              <div class="mb-2">
-                                <input type="text" class="form-control" placeholder="Book Id" [ngModel]="returnedBookId" name="returnedBookId" readonly>
-                              </div>
-
-                              <div class="mb-2">
-                                <input class="form-control" list="returndatalistOptions1" id="returnexampleDataList1" placeholder="Enter Member Name"
-                                [(ngModel)]="returnedMemberName" name="returnedMemberName" (ngModelChange)="returnMemberId(returnedMemberName)" required> 
-                                <datalist id="returndatalistOptions1">
+                                <select class="form-control" id="returnexampleDataList1" [(ngModel)]="returnedMemberName" name="returnedMemberName" (ngModelChange)="returnMemberId(returnedMemberName)" required>
+                                  <option value="" disabled selected>Select a Member for Return</option>
                                   <option *ngFor="let member of returnMember" [value]="member.name">{{ member.name }}</option>
-                                </datalist>
+                                </select>
                               </div>
-
+                              
                               <div>
                                 <input type="text" class="form-control mb-2" placeholder="Member Id" [ngModel]="returnedMemberId" name="returnedMemberId" readonly>
                               </div>
+                              
+                              <div class="mb-2">
+                                <input type="text" class="form-control" placeholder="Book Name" [ngModel]="getBookNameForMember(returnedMemberName)" name="returnedBookName" readonly>
+                              </div>
+
+                              
+                              <div class="mb-2" *ngIf="returnedBookId">
+                                <input type="text" class="form-control" placeholder="Book Id" [(ngModel)]="returnedBookId" name="returnedBookId" readonly>
+                            </div>
+                              
 
                               <div class="mb-2">
                                 <input type="date" id="assignmentDate" class="form-control" [(ngModel)]="date" name="date" required>
+                            </div>
+
+                            <div class="mb-2">
+                                <input type="text" id="paidAmount" placeholder="Enter paid Amount" class="form-control" [(ngModel)]="dueAmount" name="paidAmount" required>
+                                <p>*Enter '0' if no payment is done</p>
                             </div>
                         </form>
                     </div>

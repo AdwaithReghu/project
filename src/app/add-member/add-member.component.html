@@ -31,11 +31,16 @@
                 </div>
 
                 <div class="form-group">
+                    <label for=" date">Joining Date</label>
                     <input [(ngModel)]="member.membersince" name="date" type="date" class="form-control" id="date" placeholder="Enter Joining Date">
                 </div>
 
                 <div class="form-group">
                     <input [(ngModel)]="member.photo" name="image" type="text" class="form-control" id="image" placeholder="Enter Image Address">
+                </div>
+                
+                <div class="form-group">
+                    <input [(ngModel)]="member.dues" name="dues" type="text" class="form-control" id="dues" placeholder="**Enter 'No Dues'">
                 </div>
                 
                 <div class="form-group">
@@ -45,6 +50,10 @@
                         <option>Assigned</option>
                         <option>Not Assigned</option>
                     </select>
+                </div>
+
+                <div class="form-group">
+                    <input [(ngModel)]="member.bookname" name="bookname" type="text" class="form-control" id="bookname" placeholder="Enter 'Nil'">
                 </div>
 
                 <button (click)="addMember()" type="submit" class="btn btn-primary mb-5">Add Member <i class="fa-solid fa-plus"></i></button>

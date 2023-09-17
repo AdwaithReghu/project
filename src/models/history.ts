@@ -4,4 +4,5 @@ export class history{
     bookid?:string
     action?:string
     date?:string
+    dueAmount?:string
 }

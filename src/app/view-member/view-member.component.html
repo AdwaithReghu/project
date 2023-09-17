@@ -1,86 +1,124 @@
 <!-- Header -->
 <header>
-    <nav class="navbar">
-        <div class="logo">
-          <a routerLink="/library/main"><h1 class="heading">Library Management System</h1></a>
-        </div>
-        <ul class="nav-links">
-            <li><a routerLink="/library/members"><i class="fa-solid fa-arrow-left"></i>  Go Back</a></li>
-        </ul>
-    </nav>
+  <nav class="navbar">
+    <div class="logo">
+      <a routerLink="/library/main">
+        <h1 class="heading">Library Management System</h1>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a routerLink="/library/members"><i class="fa-solid fa-arrow-left"></i> Go Back</a></li>
+    </ul>
+  </nav>
 </header>
 
 <!-- Main Content -->
 <div class="container">
-    <div class="book">
-        <img [src]="member.photo" alt="Book Cover" class="book-cover">
-    </div>
-    <div class="book-details">
-        <h2 class="book-title">{{member.name}}
-            <span class="icon-button" style="margin-top: 100px; margin-right: 410px;"><i class="fa-solid fa-pen-to-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></span>
-            <span class="icon-button" style=" margin-top: 100px; margin-right: 370px;"><a (click)="deleteMember(member.id)"><i class="fa-solid fa-trash"></i></a></span>
-        </h2>
-        <p class="author"><strong>Email:</strong> {{member.email}}</p>
-        <p class="status">
-            <strong>Contact Number:</strong> {{member.contactno}}</p>
-        <p class="info"><strong>Member Since:</strong> {{member.membersince}} </p>
-        <p class="genre"><strong>Book Assigned:</strong> {{member.book}} </p>
-    </div>
+  <div class="book">
+    <img [src]="member.photo" alt="Book Cover" class="book-cover">
+  </div>
+  <div class="book-details">
+    <h2 class="book-title">{{member.name}}
+      <span class="icon-button" style=" margin-top: 100px; margin-right: 450px;"><i class="fa-solid fa-wallet"
+          type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></i></span>
+      <span class="icon-button" style="margin-top: 100px; margin-right: 410px;"><i class="fa-solid fa-pen-to-square"
+          type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></span>
+      <span class="icon-button" style=" margin-top: 100px; margin-right: 370px;"><a (click)="deleteMember(member.id)"><i
+            class="fa-solid fa-trash"></i></a></span>
+    </h2>
+    <p class="author"><strong>Email:</strong> {{member.email}}</p>
+    <p class="status">
+      <strong>Contact Number:</strong> {{member.contactno}}
+    </p>
+    <p class="info"><strong>Member Since:</strong> {{member.membersince}} </p>
+    <p class="genre"><strong>Book Assigned:</strong> {{member.book}} </p>
+    <p class="dues" [ngStyle]="{ color: getDuesTextColor(member.dues) }"><strong>Dues:</strong> {{ member.dues }}</p>
+  </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Member Details</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="Name">Name</label>
-                <input [(ngModel)]="member.name" name="name" type="text" class="form-control" id="bookName" placeholder="Enter the member's name" required>
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input [(ngModel)]="member.email" name="email" type="email" class="form-control" id="author" placeholder="Enter the email address" required>
-              </div>
-              <div class="form-group">
-                <label for="contactno">Contact Number</label>
-                <input [(ngModel)]="member.contactno" name="contactno" type="text" class="form-control" id="contactno" placeholder="Enter the contact number" required>
-              </div>
-              <div class="form-group">
-                <label for="image">Image Address</label>
-                <input [(ngModel)]="member.photo" name="image" class="form-control" id="image" placeholder="Enter a image address" required>
-              </div>
-              <div class="form-group">
-                <label for="membersince">Member Since</label>
-                <input [(ngModel)]="member.membersince" name="membersince" type="date" class="form-control" id="membersince" placeholder="Enter the joining date" required>
-              </div>    
-            </form>
+<!-- Modal 1-->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Update Amount</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #dueForm="ngForm">
+          <div class="form-group">
+            <label for="Name">Enter the paid Amount</label>
+            <input [(ngModel)]="member.dues" name="dues" type="text" class="form-control" id="dues"
+              placeholder="Enter the paid Amount" required>
           </div>
-          
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" (click)="updateMember()">Save changes</button>
-        </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="updateDues()">Update</button>
       </div>
     </div>
   </div>
+</div>
+
+<!-- Modal 2-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Member Details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="Name">Name</label>
+            <input [(ngModel)]="member.name" name="name" type="text" class="form-control" id="bookName"
+              placeholder="Enter the member's name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input [(ngModel)]="member.email" name="email" type="email" class="form-control" id="author"
+              placeholder="Enter the email address" required>
+          </div>
+          <div class="form-group">
+            <label for="contactno">Contact Number</label>
+            <input [(ngModel)]="member.contactno" name="contactno" type="text" class="form-control" id="contactno"
+              placeholder="Enter the contact number" required>
+          </div>
+          <div class="form-group">
+            <label for="image">Image Address</label>
+            <input [(ngModel)]="member.photo" name="image" class="form-control" id="image"
+              placeholder="Enter a image address" required>
+          </div>
+          <div class="form-group">
+            <label for="membersince">Member Since</label>
+            <input [(ngModel)]="member.membersince" name="membersince" type="date" class="form-control" id="membersince"
+              placeholder="Enter the joining date" required>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="updateMember()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Footer -->
 <footer class="footer">
-    <div class="social-icons">
-        <a href="#" class="icon">
-            <i class="fa-brands fa-facebook"></i>
-        </a>
-        <a href="#" class="icon">
-            <i class="fa-brands fa-twitter"></i>
-        </a>
-        <a href="#" class="icon">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
-    </div>
-    <p>&copy; 2023 Library Management System</p>
+  <div class="social-icons">
+    <a href="#" class="icon">
+      <i class="fa-brands fa-facebook"></i>
+    </a>
+    <a href="#" class="icon">
+      <i class="fa-brands fa-twitter"></i>
+    </a>
+    <a href="#" class="icon">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+  </div>
+  <p>&copy; 2023 Library Management System</p>
 </footer>

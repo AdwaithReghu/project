@@ -11,6 +11,7 @@ export class ViewMemberComponent implements OnInit{
 
   memberId:any='';
   member:any='';
+  updatedDue:any;
 
   constructor(private api:ApiService, private activatedRoute:ActivatedRoute, private router:Router){}
 
@@ -37,6 +38,18 @@ export class ViewMemberComponent implements OnInit{
       alert('Details Updated')
       location.reload()
     })
+  }
+
+  updateDues(){
+    this.api.updateMember(this.memberId,this.member).subscribe((result:any)=>{
+      alert('Amount Updated')
+      location.reload()
+    })
+  }
+
+  getDuesTextColor(dues: string): string {
+    const duesAsNumber = parseFloat(dues); // Convert the string to a number
+    return duesAsNumber < 0 ? 'red' : 'green';
   }
 
 }

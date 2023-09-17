@@ -6,4 +6,6 @@ export class members{
     contactno?:string
     photo?:string
     book?:string
+    dues?:string
+    bookname?:String
 }

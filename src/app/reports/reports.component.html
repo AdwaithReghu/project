@@ -25,6 +25,7 @@
                     <th>Member Name</th>
                     <th>Assigned Date</th>
                     <th>Returned Date</th>
+                    <th>Due Amount</th>
                 </tr>
             </thead>
             <tbody>
@@ -44,7 +45,9 @@
                                 </ng-container>
                                 <span class="not-returned" *ngIf="!hasReturnDate(hist)">Not Returned</span>
                             </td>
-                        </tr>
+                            <td [ngStyle]="{'color': getDuesTextColor(getMemberDues(hist.memberId))}">
+                                {{ getMemberDues(hist.memberId) }}
+                              </td>                        </tr>
                     </ng-container>
                 </ng-container>
             </tbody>
